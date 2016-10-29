@@ -12,7 +12,7 @@
 #include "control.h"
 
 
-EK_XYZ	MPU6050_GYRO_LAST;		//最新一次读取值
+EK_XYZ	MPU6050_GYRO_LAST;	//最新一次读取值
 RC_GETDATA Rc_Get;
 
 
@@ -21,9 +21,9 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
 	delay_init(168);  		//初始化延时函数
 	uart_init(115200);		//初始化串口波特率为500000
-	LED_Init();						//初始化LED 
+	LED_Init();				//初始化LED 
 
-	MPU_Init();					//初始化MPU6050
+	MPU_Init();				//初始化MPU6050
 	PWM_Output_Initial();
 	while(mpu_dmp_init());  //初始化mpu6050  同时矫正首次使用的值
 	printf("init complete... \r\n");
@@ -46,6 +46,5 @@ int main(void)
 		}
 	}
 }
-
 
 
